@@ -10,14 +10,14 @@ import argparse
 
 parser = argparse.ArgumentParser(description = "DemoScript")
 # adding an argument to the parser:
-parser.add_argument('-batch_size', type = str, required = True, help = "Provide a batch_size")
+parser.add_argument('-batch_size', type = str, required = False, help = "Provide a batch_size")
 args = parser.parse_args()
 print(f'batch_size: {args.batch_size}')
 
 # HyperParameters:
 block_size = 64
 # batch_size = 128
-batch_size = args.batch_size
+batch_size = args.batch_size or 32
 epochs = 1000
 learning_rate = 3e-4
 val_epochs = 100
